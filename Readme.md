@@ -1,3 +1,3 @@
 # learning management system
 
-all type of learning management system suport
+all type of learning management system suport 
