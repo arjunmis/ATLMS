@@ -5,4 +5,16 @@ dotenv.config({
   path: './env'
 });
 
-connectDB();
+connectDB()
+.then(()=>{
+  app.on("error",(error)=>{
+    console.log(`express server error!!! ${error}`);
+  });
+  app.listen(process.env.PORT || 8000,()=>{
+    console.log(`server running at port ${process.env.PORT}`);
+  });
+})
+.catch((error)=>{
+  console.log("Mongodb connection failed !!!",error);
+});
+
